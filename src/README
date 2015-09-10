@@ -1,0 +1,42 @@
+This is part technical info, part monologue. I'm recording
+both the structure of the program and my thoughts on its
+development for posterity.
+
+Early in development this project was just a single ~500
+line Javascript file. It was a horrendous mess. I've
+refactored it into OO-ish classes (each held in its own
+file) wherever it seemed appropriate. If nothing else it's
+at least more digestable.
+
+Either I've overdone it or I've underestimated the SLOC/file
+count overhead of good OO - I did not expect there to be
+this many files nor this many lines. I'm cautiously
+optimistic that I haven't broken any unwritten OO laws,
+though, and it's been a learning experience.
+
+A lot of my classes involve callbacks that are called
+whenever there is some change to internal data. I mostly use
+this to update the UI. I hope that I've at least got the
+general pattern of that idiom correct; I do know that there
+exist libraries designed for this sort of thing, but now
+didn't seem like the time to find and learn one.
+
+Another idiom that I find myself using often is:
+	var self = this;
+	var f = function(...) {
+		...
+		self.doStuff();
+		...
+	};
+This is necessary, it seems, because "this" is probably
+different between the inner and outer scopes. Again, I'm
+flying blind here. I'm not sure if that's the most
+appropriate idiom to manipulate an "outer this", but it
+seems to work and it doesn't feel super dirty. I'm grateful
+for the functional programming background freshman year at
+Waterloo has given me.
+
+As of 09/09/2015, I consider this to be a finished project.
+I'm quite proud of it, notwithstanding some minor grief,
+and notwithstanding the fact that there are improvements
+to be made.
