@@ -22,7 +22,7 @@ deployment of Kudos. This is an imperfect demonstration
 on mobile as no particular attention is payed to viewports.
 
 ## Dependencies
-Kudos requires node.js, as well as the node.js minifier package,
+Kudos requires node.js, as well as the node.js `minifier` package,
 in order to build. Once built, it can be expected to work in
 any modern browser (IE 9+, etc.), and furthermore has
 fairly good mobile support.
