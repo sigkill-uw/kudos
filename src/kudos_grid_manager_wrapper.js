@@ -70,6 +70,7 @@ KudosGridManagerWrapper.prototype.redo = function() {
 /* KudosGridManagerWrapper.insertGrid(grid)
  * Inserts a grid. */
 KudosGridManagerWrapper.prototype.insertGrid = function(grid) {
+	if(grid === null) return;
 	this.manager.insertGrid(grid);
 	this.callback(true);
 };
